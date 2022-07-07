@@ -12,3 +12,15 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const list = document.querySelector('.gallery')
+
+const createLiEl = images.map(( {url, alt} ) => `<li class="item" style="display: flex; margin-right: 15px;"><img class="img" style="display: block;" src="${url}" alt="${alt}" width="400"/></li>`).join("");
+
+list.insertAdjacentHTML("afterbegin", createLiEl)
+
+list.style.backgroundColor = "blue"
+list.style.display = "flex"
+list.style.height = "500px"
+list.style.paddingTop = "50px"
+list.style.paddingBottom = "50px"
