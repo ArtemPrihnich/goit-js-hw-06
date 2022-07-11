@@ -9,16 +9,18 @@ const ingredients = [
 
 const list = document.querySelector('#ingredients')
 
-const createLiEl = () => {
+function createLiEl() {
+  const test = [];
   ingredients.map(ingredient => {
     const liCreate = document.createElement('li')
     
     liCreate.textContent = `${ingredient}`;
   
     liCreate.classList.add('item')
-
-    list.append(liCreate);
+    
+    return test.push(liCreate)
   })
+  list.append(...test);
 }
 
 createLiEl();

@@ -11,11 +11,22 @@ function onSubmit (event) {
         return alert(message);
     }
 
-    const formData = new FormData(event.currentTarget);
+    const emailName = input[0].getAttribute("name");
+    const passwordName = input[1].getAttribute("name");
 
-    formData.forEach((value, name) => {
-        console.log(`${name}: ${value}`);
-    });
+    const data = {};
+
+    data[emailName] = input[0].value;
+    data[passwordName] = input[1].value;
+    console.log(data)
 
     event.currentTarget.reset();
 }
+
+
+
+   // const formData = new FormData(event.currentTarget);
+
+    // formData.forEach((value, name) => {
+    //     console.log(`${name}: ${value}`);
+    // });
